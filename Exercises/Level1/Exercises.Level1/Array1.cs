@@ -19,7 +19,15 @@ public class Array1
     /// </summary>
     public bool FirstLast6(int[] nums)
     {
-        throw new NotImplementedException();
+        int first = nums[0];
+
+        int lasIndex = nums.Length - 1;
+
+        int last = nums[lasIndex];
+
+        return first == 6 || last == 6;
+        
+       
     }
 
     /// <summary>
@@ -32,18 +40,32 @@ public class Array1
     /// </summary>
     public bool SameFirstLast(int[] nums)
     {
-        throw new NotImplementedException();
-    }
+        // 1. Ja masīva elementu skaits ir mazāks vai vienāds ar 1, tad atgriežam vērtība false
 
-    /// <summary>
-    /// Return an int array length 3 containing the first 3 digits of pi, {3, 1, 4}.
-    /// 
-    /// makePi() → [3, 1, 4]
-    /// </summary>
-    public int[] MakePi()
-    {
-        throw new NotImplementedException();
-    }
+        // 2. a masīva pirmā un pēdējā vērtība ir vienāda, tad true citādi false
+       
+        if (nums.Length == 0)
+            {
+                return false;
+            }
+        int firstElement = nums[0];
+        int lastIndex = nums.Length - 1;
+        int lastElement = nums[lastIndex];
+
+        return firstElement == lastElement;
+
+        /// <summary>
+        /// Return an int array length 3 containing the first 3 digits of pi, {3, 1, 4}.
+        /// 
+        /// makePi() → [3, 1, 4]
+        /// </summary>
+        public int
+   
+       {
+            return new int[] { 3, 1, 4 };
+        }
+
+   
 
     /// <summary>
     /// Given 2 arrays of ints, a and b, return true if they have the same first element or they
@@ -54,9 +76,42 @@ public class Array1
     /// commonEnd([1, 2, 3], [1, 3]) → true
     /// </summary>
     public bool CommonEnd(int[] a, int[] b)
+    
+        
+    // 1. Izgūstam abu masīvu pirmos elementus, ja ir vienādi, tad atgriežam true
+
+    // 2. Tas pats ar abu masīvu pēdējiem elementiem
+
+
+    // 3. Citādi false
+    // 1. Izgūstam abu masīvu pirmos elementus, ja ir vienādi, tad atgriežam true
+
+    // 2. Tas pats ar abu masīvu pēdējiem elementiem
+
+
+    // 3. Citādi false
+    public bool CommonEnd(int[] a, int[] b)
     {
-        throw new NotImplementedException();
+        int aFirstElement = a[0];
+        int bFirstElement = b[0];
+
+        if (aFirstElement == bFirstElement)
+        {
+            return true;
+        }
+
+        int aLastIndex = a.Length - 1;
+        int bLastIndex = b.Length - 1;
+
+        int aLastElement = a[aLastIndex];
+        int bLastElement = b[bLastIndex];
+
+        return aLastElement == bLastElement;
     }
+
+
+
+
 
     /// <summary>
     /// Given an array of ints length 3, return the sum of all the elements.
@@ -67,7 +122,15 @@ public class Array1
     /// </summary>
     public int Sum3(int[] nums)
     {
-        throw new NotImplementedException();
+   
+    int sum = 0;
+
+    foreach (var num in nums)
+    {
+        sum = sum + num;
+    }
+
+    return sum;
     }
 
     /// <summary>
@@ -80,7 +143,17 @@ public class Array1
     /// </summary>
     public int[] RotateLeft3(int[] nums)
     {
-        throw new NotImplementedException();
+    int num_1 = nums[0];
+    int num_2 = nums[1];
+    int num_3 = nums[2];
+
+    int[] newNums = new[nums.Length];
+    newNums[0] = num_2;
+    newNums[1] = num_3;
+    newNums[2] = num_1;
+
+
+    return newNums;
     }
 
     /// <summary>

@@ -2,9 +2,9 @@
 
 namespace Exercises.Level1;
 
-/// <summary>
-/// Basic boolean logic puzzles -- if else && || !.
-/// </summary>
+// <summary>
+//Basic boolean logic puzzles -- if else && || !.
+// <summary>
 public class Logic1
 {
     /// <summary>
@@ -17,10 +17,51 @@ public class Logic1
     /// cigarParty(50, false) → true
     /// cigarParty(70, true) → true
     /// </summary>
+    /// 
     public bool CigarParty(int cigars, bool isWeekend)
     {
-        throw new NotImplementedException();
+        //if ((isWeekend && cigars >= 40) || (!isWeekend && cigars >= 40 && cigars <= 60))
+        //{
+        //    return true;
+        //}
+        //return false;
+
+        //if (cigars >= 40 && isWeekend)
+        //{
+        //    return true;
+        //}
+
+        //if (cigars >= 40 && cigars <= 60)
+        //{
+        //    return true;
+        //}
+
+
+        if (cigars >= 40 && (isWeekend || cigars <= 60))
+        {
+            return true;
+        }
+
+        return false;
     }
+        //// 1. Ja cigāru skaits ir mazāks par 40, tad ballīte nav izdevusies   
+        //if (cigars < 40)
+        //{
+        //return false;
+        //}
+        //// 2. Ja ir brīvdiena, tad vienmēr ir izdevusies
+        //if (isWeekend)
+        //{
+        //return true;    
+        //}
+        //// 3. Ja nav brīvdiena, tad cigāru skaitam jābūt mazākam par 60
+        //if (cigars <= 60)
+        //{
+        //return true;
+        //}
+       
+        //return false;
+    //}
 
     /// <summary>
     /// You and your date are trying to get a table at a restaurant. The parameter "you" is the
@@ -36,7 +77,21 @@ public class Logic1
     /// </summary>
     public int DateFashion(int you, int date)
     {
-        throw new NotImplementedException();
+        // 1. Ja kaut viens ir 2 vai mazāk, tad 0
+        if (you <= 2 || date <= 2)
+        {
+            return 0;       
+        }
+
+        // 2. ja kaut viens ir 8 vai vairāk, tad 2
+        if (you >= 8 || date >= 8)
+        {
+            return 2;
+        }
+        // 3. citādi 1
+        
+        return 1;
+        
     }
 
     /// <summary>
@@ -51,8 +106,23 @@ public class Logic1
     /// </summary>
     public bool SquirrelPlay(int temp, bool isSummer)
     {
-        throw new NotImplementedException();
+        // 1. Ja temperatūra ir starp 60 un 90 un nav vasara, tad atgriežam true
+        // 2. Ja temperatūra ir starp 60 un 100 un ir vasara, tad atgriežam true
+        // 3. Citādi atgriežam vērtību false
+
+        int higherTemp = 90;
+        if (isSummer) 
+        {
+            higherTemp += 10;
+        }
+  
+        if (temp >= 60 && temp <= higherTemp)
+        {
+            return true;
+        }
+        return false;
     }
+           
 
     /// <summary>
     /// You are driving a little too fast, and a police officer stops you. Write code to compute the
